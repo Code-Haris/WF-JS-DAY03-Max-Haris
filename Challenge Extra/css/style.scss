@@ -1,0 +1,101 @@
+$font-color : #363357;
+$create-hight: 30px;
+
+* {
+    margin: 0;
+    padding: 0;
+    color: $font-color;
+    font-family: sans-serif;
+}
+
+body {
+    width: 60vw;
+    margin: 0 auto;
+    background-color: #F0EFF2;
+    text-align: center;
+
+    header {
+        width: 100%;
+        background-color: #F7F6F9;
+        text-align: center;
+
+        h1 {
+            padding: 40px;
+        }
+    }
+
+    #createTask {
+        padding: 20px;
+
+        input {
+            border-radius: 4px 0px 0px 4px;
+            border: none;
+            width: 50%;
+            height: $create-hight;
+        }
+
+        button {
+            border-radius: 4px;
+            border: none;
+            width: 20%;
+            background-color: #65B25F;
+            height: $create-hight;
+        }
+
+    }
+
+    #taskList {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+
+        h2 {
+            width: 100%;
+        }
+
+        .task {
+            width: 100%;
+            background-color: $font-color;
+            margin: 2px;
+            padding: 5px;
+            border-radius: 5px;
+
+            span {
+                margin: 3px;
+                align-self: flex-start;
+                color: white;
+                float: left;
+                vertical-align: center;
+            }
+
+            button {
+                align-self: flex-end;
+                float: right;
+                margin: 3px;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                padding: 3px;
+            }
+
+            .done {
+                background-color: #48AD76;
+            }
+
+            .remove {
+                background-color: #DD5746;
+            }
+        }
+
+        .done {
+            background-color: #B5B5B5;
+            order: 1;
+        }
+
+        
+    }
+    
+}
