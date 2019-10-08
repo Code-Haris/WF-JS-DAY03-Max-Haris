@@ -5,10 +5,10 @@ function HotelConstructor(name,availableNights){
        return (input <= availableNights);
     }
 }
-
+window.onload = addHotels();
 function addHotels(){
     hotels = [];
-    for(let i=0; i<10; i++){
+    for(let i=0; i<3; i++){
         let hotel = new HotelConstructor(`Hotel ${i+1}`, Math.floor(Math.random()*10));
         hotels.push(hotel);
     }
@@ -19,17 +19,13 @@ function addHotels(){
         let name = document.createElement("h3");
         name.textContent = hotels[i].name;
         hotelDiv.appendChild(name);
-
-        let form = document.createElement("form");
         let input = document.createElement("input");
         input.type = "number";
         input.placeholder = "How many nights you want to stay?";
         input.id=`input${i}`
-        form.appendChild(input);
+        hotelDiv.appendChild(input);
         let button = document.createElement("button");
         button.textContent = "Check Availability";
-        form.appendChild(button);
-        hotelDiv.appendChild(form);
         let callFunction = function() {
             let newObject;
             if(hotels[i].checkAvailable(document.getElementById(`input${i}`).value)){
@@ -40,8 +36,9 @@ function addHotels(){
                 newObject.textContent = "not that many nights available";
             }
             document.getElementsByClassName("hotelDiv")[i].appendChild(newObject);
-        }
+        };
         button.addEventListener("click", callFunction , false);
+        hotelDiv.appendChild(button);
         document.getElementById("hotels").appendChild(hotelDiv);
     }
 }
