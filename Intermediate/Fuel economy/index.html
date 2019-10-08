@@ -2,16 +2,40 @@
 <html>
 <head>
 	<title>Fuel economy</title>
+	 <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="style.css">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<h1>Fuel Consumption Calculator</h1>
-<p>This is a simple form and mathematical result test</p>
-<p>Distance Driven (km):<input id="distance" type="number" min="150" max="1000000" onchange="computeConsumption()"></p>
-<p>Fuel Consumed (L):<input id="fuel" type="number" min="10" max="10000000" step="1" onchange="computeConsumption()"></p>
-<p>Cost per Unit of Fuel: $ <input id="costper" type="number" min="1.49" max="10" step="0.01" value="1.49" onchange="computeConsumption()"></p>
-<h2 id="consumption"></h2>
+<body id="BG">
+  <div id="Wrap">
+    <h1>Fuel consumption calculator</h1>
+  <div id="box">
+    <form id="fuelcalculator">
+      Type of Fuel<br><br>
+        <label class="container"><input type="radio" name="fueltype" value="Petrol" id="Petrol"> Petrol<br><span class="checkmark"></span></label><label class="container">
+  <input type="radio" name="fueltype" value="Diesel" id="Diesel"> Diesel<br>
+  <span class="checkmark"></span></label><label class="container">
+  </form>
+  </div>
+    <div id="Toinen">
+    <form id="fuelAmount">
+      Fuel per 100KM<br>
+        <input type="Text" id="fuelPerUnit"  ><br>Fuel price per unit
+ <input type="Text" id="fuelPrice"  ><br>Distance to Travel in KM
+ <input type="Text" id="KM"  ><br>
+      </form>
+  </div>
+       <div id="Kolmas">
+         <button type="button" onClick="fuelPrice(),fuelConsumption()" id="submit">Calculate</button>
+  </div>
+      </div>
+<h2 id="answer"></h2>
+  <h2 id="answers"></h2>
 
-	
-<script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
 </body>
+
+
+
 </html>
