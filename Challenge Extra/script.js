@@ -13,18 +13,27 @@ function createPage(){
     inputField.type = "text";
     inputField.placeholder = "New Task here";
     inputField.id = "newTask";
-    createTask.appendChild(inputField);
-    let commitButton = document.createElement("button");
-    commitButton.textContent = "Add Task";
     let addTaskButton = function (){
         addTask();
     }
+    inputField.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          commitButton.click();
+        }
+      });
+    createTask.appendChild(inputField);
+
+    let commitButton = document.createElement("button");
+    commitButton.textContent = "Add Task";
     commitButton.addEventListener("click", addTaskButton, false);
     createTask.appendChild(commitButton);
     document.getElementById("body").appendChild(createTask);
     
     let taskList = document.createElement("div");
     taskList.id = "taskList";
+    let taskListHead = document.createElement("h2");
+    taskListHead.textContent = "Tasks";
+    taskList.appendChild(taskListHead);
     document.getElementById("body").appendChild(taskList);
 }
 
@@ -38,7 +47,8 @@ function addTask(){
     newTask.appendChild(task);
 
     let doneButton = document.createElement("button");
-    doneButton.textContent = "done";
+    doneButton.textContent = "\u2713";
+    doneButton.className = "done";
     let taskDone = function(){
         newTask.className="task done";
         newTask.removeChild(doneButton);
@@ -47,7 +57,8 @@ function addTask(){
     newTask.appendChild(doneButton);
 
     let removeButton = document.createElement("button");
-    removeButton.textContent = "x";
+    removeButton.textContent = "\u2573";
+    removeButton.className = "remove";
     let removeItem = function(){
         newTask.parentNode.removeChild(newTask);
     }
