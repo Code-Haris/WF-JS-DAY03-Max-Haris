@@ -13,3 +13,6 @@ text_truncate = function(str, length, ending) {
   };
 console.log(text_truncate('I am a hero from World of Warcraft'))
 console.log(text_truncate('I am a hero from World of Warcraft',12))
+alert(text_truncate('Before Truncate : I am a hero from World of Warcraft'))
+alert('After Truncate, click ok to see :D')
+alert(text_truncate('I am a hero from World of Warcraft',12))
